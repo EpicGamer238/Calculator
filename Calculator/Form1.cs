@@ -1,13 +1,18 @@
+/*HEADER
+ * Author: Simon Wunderlich
+ * For units 1&2 Computing
+ * Date of last edit: 20/04/2023
+ * Summary: Basic starting page of a calculator. Uses the Math Eval to perform basic calculations. Also acts as the entry point for other programs
+ */
+
 using org.matheval;
 
 namespace Calculator
 {
     public partial class Form1 : Form
     {
-        bool isDec = false;
         bool prevSym = false;
         string prevChar;
-        string ans = "0";
         bool newLine = true;
         public Form1()
         {

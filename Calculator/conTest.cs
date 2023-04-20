@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*HEADER
+ * Author: Simon Wunderlich
+ * For Units 1&2 Computing
+ * Date of last edit: 20/04/2023
+ * Summary: A function which takes in a single function and determines whether it is convergent using the root test. If it is convergent it will also find the pointit converges on
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -85,17 +93,20 @@ namespace Calculator
 
             //If the value of the sum of the series rounded to 6 decimal places stays constant for two neighbouring indexes, then it has converged to its target value
             if (Math.Round(seuquence.sum(50), 2) == Math.Round(seuquence.sum(50 + 1), 2))
-                //Rounds the 
+                //Rounds the target value to two decimal places
                 label2.Text += Math.Round(seuquence.sum(50), 2).ToString();
+            //if it doesn't reach its target value then it states that the convergence point is inconclusive
             else
                 label2.Text += "Inconclusive";
+
+            //Shows next screen controls
             label1.Visible = true;
             panel1.Visible = false;
             textBox2.Visible = false;
             label3.Visible = false;
             button1.Visible = false;
         }
-
+        //Closes the page when the back button is pressed
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
