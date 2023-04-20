@@ -16,8 +16,6 @@ namespace Calculator
 {
     public partial class conTest : Form
     {
-
-        int total = 0;
         public conTest()
         {
             InitializeComponent();
@@ -33,17 +31,21 @@ namespace Calculator
             {
                 expression = _expression;
             }
+            //Finds the sum of a given index
             public float sum(int _range)
             {
+                //Total is the variable which hold the sum of the expression
                 total = 0;
-                Dictionary<int, float> result = new Dictionary<int, float>();
+                //Adds the value of each index to the total
                 for (int x = start; x <= _range; x++)
                 {
                     total += float.Parse(new org.matheval.Expression(expression).Bind("x", x).Eval().ToString());
                 }
+                //returns the total + 1
                 return total + 1;
             }
-
+            //Finds whether a series is convergence using the root test
+            //Finds whether a series is convergence using the root test
             public bool conTest()
             {
                 org.matheval.Expression power = new org.matheval.Expression("x^(1/b)");
