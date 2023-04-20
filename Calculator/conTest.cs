@@ -45,23 +45,36 @@ namespace Calculator
                 return total + 1;
             }
             //Finds whether a series is convergence using the root test
-            //Finds whether a series is convergence using the root test
+            //The root test states that if f(x)^(1/x) < 1 then the function is convergent
             public bool conTest()
             {
-                org.matheval.Expression power = new org.matheval.Expression("x^(1/b)");
-                org.matheval.Expression series = new org.matheval.Expression(expression);
-                series.Bind("x", range);
-                long seriesInt = Math.Abs(Convert.ToInt64(series.Eval()));
-                power.Bind("x", seriesInt).Bind("b", range);
+                //Defines a root function that will find x to the nth root
+                org.matheval.Expression power = new org.matheval.Expression("x^(1/n)");
 
+                //Recieves a function to test
+                org.matheval.Expression series = new org.matheval.Expression(expression);
+
+                //Sets a highish value to x so it wont overflow
+                series.Bind("x", range);
+                
+                //Finds the absolute value of the function when x = range
+                long seriesInt = Math.Abs(Convert.ToInt64(series.Eval()));
+
+                //Puts the result under a root of factor  range
+                power.Bind("x", seriesInt).Bind("n", range);
+
+                //return whether the result of the root function is less than 1
                 return Convert.ToInt64(power.Eval()) < 1;
             }
         }
 
+        //This function contains the logic to find the convergence and display it once a button is pressed
         private void button1_Click_1(object sender, EventArgs e)
         {
+            //Gets the function from a user input
             sequence seuquence = new sequence(textBox2.Text.ToString());
-            //Dictionary<int, float> series = seuquence.sum();
+
+            //if function is convergent, display convergent, else display divergent
             if (seuquence.conTest())
             {
                 label2.Visible = true;
@@ -70,7 +83,9 @@ namespace Calculator
             else
                 label1.Text = "Divergent";
 
+            //If the value of the sum of the series rounded to 6 decimal places stays constant for two neighbouring indexes, then it has converged to its target value
             if (Math.Round(seuquence.sum(50), 2) == Math.Round(seuquence.sum(50 + 1), 2))
+                //Rounds the 
                 label2.Text += Math.Round(seuquence.sum(50), 2).ToString();
             else
                 label2.Text += "Inconclusive";

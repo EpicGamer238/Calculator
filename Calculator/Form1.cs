@@ -149,15 +149,13 @@ namespace Calculator
             //Checks if the expression returns any errors
             //If there are any errors, it will out put "ERROR"
             //Otherwise it will output the result 
-            List<String> errors = expression.GetError();
-            if (errors.Count > 0)
-            {
-                label1.Text = "ERROR";
-            }
-            else
+            try
             {
                 label1.Text = expression.Eval().ToString();
-
+            }
+            catch
+            {
+                label1.Text = "ERROR";
             }
             //After an error or an result, the calculator goes onto a different line
             newLine = true;
