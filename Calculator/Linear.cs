@@ -1,7 +1,7 @@
 ﻿/*HEADER
  * Author: Simon Wunderlich
  * For Units 1&2 Computing
- * Date of last edit: 20/04/2023
+ * Date of last edit: 22/04/2023
  * Summary: Program takes in two coordinates and finds the linear function joining them
  */
 
