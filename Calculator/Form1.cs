@@ -5,6 +5,23 @@
  * Summary: Basic starting page of a calculator. Uses the Math Eval to perform basic calculations. Also acts as the entry point for other programs
  */
 
+
+
+/*PSEUDOCODE
+ * 
+ * START
+ *  DEFINE addChar(char c)
+ *      TEXT equation add c
+ *  DEFINE evaluate()
+ *      TEXT result <- MATHEVAL eval equation
+ *      
+ *  for each char c in "1234567890-+/*="
+ *      IF c is "=" THEN
+ *          CALL evaluate()
+ *      ELSE IF c is pressed THEN
+ *          CALL addChar(c)
+ * END
+ */
 using org.matheval;
 
 namespace Calculator

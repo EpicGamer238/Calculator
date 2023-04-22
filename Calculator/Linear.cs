@@ -5,7 +5,27 @@
  * Summary: Program takes in two coordinates and finds the linear function joining them
  */
 
-
+/*PSUEDOCODE
+ * START
+ *  DEFINE linear(NUMERICAL x1, NUMERICAL y1, NUMERICAL x2, NUMERICAL y2)
+ *      NUMERICAL m <- (y1 MINUS y2) DIVIDED BY (x1 minus x2)
+ *      NUMERICAL c <- y1 MINUS m MULTIPLIED BY x1
+ *      TEXT formular <- "y = "
+ *      formular PLUS m
+ *      formular PLUS "x + "
+ *      formular PLUS c
+ *      DISPLAY formular
+ *  DISPLAY "ENTER FIRST X COORDINATE"
+ *  x1 <- INPUT
+ *  DISPLAY "ENTER FIRST Y COORDINATE"
+ *  y1 <- INPUT
+ *  DISPLAY "ENTER SECOND X COORDINATE"
+ *  x2 <- INPUT
+ *  DISPLAY "ENTER SECOND Y COORDINATE"
+ *  y2 <- INPUT
+ *  
+ *  CALL linear(x1, y1, x2, y2)
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

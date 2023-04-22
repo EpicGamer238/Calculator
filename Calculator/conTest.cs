@@ -5,7 +5,27 @@
  * Summary: A function which takes in a single function and determines whether it is convergent using the root test. If it is convergent it will also find the pointit converges on
  */
 
-
+/*PSEUDOCODE
+ * 
+ * START
+ *  DEFINE conTest(TEXT expression)
+ *      NUMERICAL base <- MATHEVAL expression BIND "x" to 50
+ *      NUMERICAL result = base TO THE POWER OF 1/50
+ *      IF result < 1 THEN
+ *          BOOL isConvergent <- true
+ *      ELSE
+ *          BOOL isConvergent <- false
+ *      return isConvergent
+ *  DISPLAY "ENTER EXPRESSION"
+ *  TEXT _expression <- INPUT
+ *  BOOL result <- CALL conTest(_expression)
+ *  IF result = true
+ *      DISPLAY "The expression is Convergent
+ *  ELSE
+ *      DISPLAY "The expression is Divergent
+ *  END
+ * 
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
